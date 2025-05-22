@@ -1,101 +1,96 @@
-Titanic Survival Prediction
-Project Overview
+# 🚢 Titanic Survival Prediction – Neural Network
 
-This project aims to predict the survival of passengers on the Titanic using machine learning techniques. Based on the famous Titanic dataset, the model analyzes passenger data such as age, sex, class, and other features to estimate the probability of survival.
-Dataset
+This project uses a neural network built with TensorFlow/Keras to predict passenger survival on the Titanic dataset. The goal is to explore classification techniques, data preprocessing, and model evaluation in a real-world scenario.
 
-The dataset used in this project is the Titanic dataset from Kaggle, which contains information about passengers aboard the Titanic, including:
+---
 
-    PassengerId
+## 📊 Problem Statement
 
-    Pclass (Ticket class)
+Given information about passengers such as age, gender, class, and fare, predict whether they survived the Titanic disaster or not.
 
-    Name
+- Type: Binary Classification (`Survived`: 0 = No, 1 = Yes)
+- Dataset: [Titanic - Machine Learning from Disaster (Kaggle)](https://www.kaggle.com/c/titanic)
 
-    Sex
+---
 
-    Age
+## 🧠 Model Summary
 
-    SibSp (Number of siblings/spouses aboard)
+A simple feedforward neural network built using Keras with:
 
-    Parch (Number of parents/children aboard)
+- Input Layer: Standardized numerical and encoded categorical features
+- Hidden Layers: `Dense (64) → Dropout → Dense (32)`
+- Output Layer: `Dense (1)` with `sigmoid` activation
+- Loss Function: Binary Crossentropy
+- Optimizer: Adam
+- Accuracy achieved: **~80%**
 
-    Ticket
+---
 
-    Fare
+## 🛠️ Tech Stack
 
-    Cabin
+- **Language**: Python
+- **Libraries**: Pandas, NumPy, Seaborn, Scikit-learn, TensorFlow/Keras, Matplotlib
 
-    Embarked (Port of Embarkation)
+---
 
-    Survived (Target variable: 0 = No, 1 = Yes)
+## 📁 Project Structure
 
-Objective
+titanic_survival/
+│
+├── data/
+│ └── train.csv
+├── titanic.ipynb # Jupyter notebook with full code
+├── README.md # This file
+├── requirements.txt # Python packages
 
-    To build a predictive model that can classify whether a passenger survived or not based on their features.
+---
 
-    To evaluate the model’s performance using accuracy, precision, recall, and F1-score.
+## 🔍 Key Steps
 
-Methodology
+1. **Data Preprocessing**
+   - Handled missing values (`Age`, `Embarked`)
+   - Removed irrelevant columns (`Name`, `Cabin`, `Ticket`)
+   - Converted categorical variables with one-hot encoding
 
-    Data Cleaning: Handling missing values, encoding categorical variables, and feature engineering.
+2. **Feature Scaling**
+   - StandardScaler used to normalize inputs for neural network
 
-    Exploratory Data Analysis (EDA): Understanding relationships between variables and survival rates.
+3. **Model Building & Training**
+   - Neural Network with Keras Sequential API
+   - Dropout used to prevent overfitting
+   - Trained for 50 epochs with validation split
 
-    Model Training: Applying machine learning algorithms such as Logistic Regression, Random Forest, or others.
+4. **Evaluation**
+   - Accuracy Score
+   - Confusion Matrix
+   - Classification Report
 
-    Evaluation: Validating the model on a test set and measuring performance metrics.
+---
 
-    Prediction: Using the model to predict survival outcomes for new data.
+## 📈 Results
 
-Technologies Used
+- **Test Accuracy**: ~80%
+- Model shows good generalization and balance between precision & recall.
 
-    Python
+---
 
-    Pandas, NumPy (Data manipulation)
+## 📌 Future Improvements
 
-    Matplotlib, Seaborn (Data visualization)
+- Hyperparameter tuning (batch size, epochs, layers)
+- Try other models (Logistic Regression, Random Forest, XGBoost)
+- Add cross-validation and AUC-ROC analysis
+- Add test set predictions and submit to Kaggle
 
-    Scikit-learn (Machine learning)
+---
 
-    Jupyter Notebook
+## 🙌 Author
 
-How to Run
+**Adham Khalifa**  
+📫 [LinkedIn](https://www.linkedin.com/in/abn-khalifa)  
+💻 [GitHub – Optional if available]
 
-    Clone this repository:
+---
 
-git clone https://github.com/yourusername/Titanic-Survival-Prediction.git
+## 📄 License
 
-Install the required packages:
-
-pip install -r requirements.txt
-
-Run the notebook or script to train and test the model:
-
-    jupyter notebook Titanic_Survival_Prediction.ipynb
-
-Results
-
-    Final model accuracy: 80%
-
-    Other metrics: 
-                    precision    recall  f1-score   support
-
-           0          0.79      0.89      0.83       105
-           1          0.80      0.66      0.73        74
-
-    accuracy                              0.79       179
-
-Future Work
-
-    Improve model by trying additional algorithms like Gradient Boosting or Neural Networks.
-
-    Perform hyperparameter tuning to optimize model performance.
-
-    Deploy the model as a web app or API for real-time predictions.
-
-References
-
-    Kaggle Titanic Competition
-
-    Scikit-learn Documentation
+This project is open source and available under the [MIT License](LICENSE).
