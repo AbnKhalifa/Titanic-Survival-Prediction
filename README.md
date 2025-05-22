@@ -87,7 +87,7 @@ titanic_survival/
 
 **Adham Khalifa**  
 📫 [LinkedIn](https://www.linkedin.com/in/abn-khalifa)  
-💻 [GitHub – Optional if available]
+💻 [GitHub](https://github.com/AbnKhalifa)
 
 ---
 
